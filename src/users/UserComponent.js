@@ -1,4 +1,4 @@
-import "./UserComponent.css";
+import "./User.css";
 import { useNavigate, useParams } from "react-router";
 import { Loader } from "../components/Loader";
 import { useEffect } from "react";
@@ -62,8 +62,9 @@ export const UserComponent = () => {
         </tbody>
       </table>
       <PostListComponent />
-
-      <button onClick={clickHandler}>На главную</button>
+      <button className="button" onClick={clickHandler}>
+        <p className="buttonp">На главную</p>
+      </button>
     </div>
   );
 };

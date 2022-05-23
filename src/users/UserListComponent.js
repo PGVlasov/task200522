@@ -1,11 +1,11 @@
-import "./UserListComponent.css";
+import "./User.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loadUsers } from "../store/actions/users";
 import { Loader } from "../components/Loader";
 import { UserCard } from "./UserCard";
 
-export const UserListComponent = ({ user }) => {
+export const UserListComponent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,9 +20,8 @@ export const UserListComponent = ({ user }) => {
 
   return (
     <div className="userList">
-      <h1>UserList</h1>
-      <div className="userListBackground"></div>
-      <div className="listContainer">
+      <h1>Список пользователей</h1>
+      <div className="usersContainer">
         {users.map((user) => {
           return <UserCard user={user} key={user.id} />;
         })}

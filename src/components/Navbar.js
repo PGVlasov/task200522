@@ -5,7 +5,7 @@ export const Navbar = () => {
     <nav>
       <div className="navbar">
         <div className="navbarHeader">
-          <p> CONCERT CLUB</p>
+          <p> Post viewing</p>
         </div>
 
         <ul>

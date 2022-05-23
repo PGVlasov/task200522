@@ -1,12 +1,37 @@
+.container {
+  margin-top: 117px;
+  padding-top: 36px;
+}
+
+.table {
+  border: 1px solid #000000;
+  justify-content: center;
+  align-items: center;
+}
+
+.td {
+  border: 1px solid grey;
+}
+
+.extreme {
+  border: 1px solid grey;
+  width: 45px;
+  height: 45px;
+}
+
 .userList {
   margin-top: 70px;
 }
 
-.listContainer {
+.usersContainer {
   display: flex;
   flex-wrap: wrap;
   left: 47px;
   top: 596px;
+  width: 95%;
+  box-sizing: border-box;
+  border: 1px solid #dadada;
+  margin: auto;
 }
 .listItem {
   box-sizing: border-box;
@@ -55,6 +80,7 @@
   padding: 10px 20px;
   gap: 10px;
   margin-top: 25px;
+  margin-bottom: 10px;
   background: #101010;
   border: 1px solid #0d1e4b;
 }
@@ -74,4 +100,8 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+}
+
+h1 {
+  margin: 3px;
 }

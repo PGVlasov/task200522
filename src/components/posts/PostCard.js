@@ -10,7 +10,8 @@ export const PostCard = ({ post }) => {
   return (
     <div className="postItem" key={post.id}>
       <p className="postTitle"> {post.title}</p>
-      <button className="button">
+      <p>{post.body.substr(0, 20)}.....</p>
+      <button className="postButton">
         <p className="buttonp" onClick={clickHandler}>
           Смотреть пост
         </p>
