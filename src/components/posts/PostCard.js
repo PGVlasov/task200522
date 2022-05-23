@@ -1,4 +1,4 @@
-import "./UserListComponent.css";
+import "./Post.css";
 import { useNavigate } from "react-router";
 
 export const PostCard = ({ post }) => {
@@ -8,8 +8,8 @@ export const PostCard = ({ post }) => {
     navigate(`/post/${post.id}`);
   };
   return (
-    <div className="listItem" key={post.id}>
-      <p className="userName"> {post.name}</p>
+    <div className="postItem" key={post.id}>
+      <p className="postTitle"> {post.title}</p>
       <button className="button">
         <p className="buttonp" onClick={clickHandler}>
           Смотреть пост

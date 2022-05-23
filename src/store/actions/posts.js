@@ -1,13 +1,13 @@
 import axios from "axios";
-import { LOAD_USERS } from "../types";
+import { LOAD_POSTS } from "../types";
 
 export const loadPosts = () => {
   try {
     return async (dispatch) => {
-      const apiUrl = "https://jsonplaceholder.typicode.com/users";
+      const apiUrl = "https://jsonplaceholder.typicode.com/users/2/posts";
       await axios.get(apiUrl).then((resp) => {
-        const allUsers = resp.data;
-        dispatch({ type: LOAD_USERS, payload: allUsers });
+        const allPosts = resp.data;
+        dispatch({ type: LOAD_POSTS, payload: allPosts });
       });
     };
   } catch (err) {

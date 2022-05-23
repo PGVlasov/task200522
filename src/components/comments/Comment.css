@@ -1,56 +1,51 @@
-.userList {
+.commentList {
   margin-top: 70px;
 }
-
-/* .userListBackground {
-  position: relative;
-  width: 1116px;
-  height: 867px;
-  left: 0px;
-  top: -147px;
-  background: url("../assets/6412a542721.png");
-} */
 
 .listContainer {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
+  border: 1px solid #dadada;
   left: 47px;
   top: 596px;
 }
+
 .listItem {
   box-sizing: border-box;
   padding-left: 17px;
   padding-top: 14px;
   width: 239px;
-  height: 143px;
+  height: 100%;
   margin-top: 15px;
   margin-left: 13px;
   border: 1px solid #dadada;
+}
+
+.header {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 23px;
+  text-transform: capitalize;
+  color: #000000;
+  margin-bottom: 4px;
+}
+.userList {
+  margin-top: 70px;
 }
 
 .list {
   color: #fff;
 }
 
-.userName {
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 23px;
-  text-transform: capitalize;
-  color: #000000;
-  margin-bottom: 4px;
-}
-
-.userAddress {
+.commentText {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 17px;
-  /* identical to box height, or 142% */
-
   color: rgba(0, 0, 0, 0.41);
 }
 

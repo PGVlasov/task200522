@@ -2,7 +2,7 @@ import "./UserListComponent.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { loadUsers } from "../store/actions/users";
-import { Loader } from "./Loader";
+import { Loader } from "../components/Loader";
 import { UserCard } from "./UserCard";
 
 export const UserListComponent = ({ user }) => {
@@ -12,7 +12,7 @@ export const UserListComponent = ({ user }) => {
     dispatch(loadUsers());
   }, [dispatch]);
 
-  const users = useSelector((state) => state.image.allUsers);
+  const users = useSelector((state) => state.users.allUsers);
 
   if (users.length === 0) {
     return <Loader />;

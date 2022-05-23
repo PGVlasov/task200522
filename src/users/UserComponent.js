@@ -1,10 +1,10 @@
 import "./UserComponent.css";
 import { useNavigate, useParams } from "react-router";
-import { Loader } from "./Loader";
+import { Loader } from "../components/Loader";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUsers } from "../store/actions/users";
-import { PostCard } from "./PostCard";
+import { PostListComponent } from "../components/posts/PostListComponent";
 
 export const UserComponent = () => {
   const navigate = useNavigate();
@@ -21,17 +21,15 @@ export const UserComponent = () => {
     dispatch(loadUsers());
   }, [dispatch]);
 
-  const users = useSelector((state) => state.image.allUsers);
+  const users = useSelector((state) => state.users.allUsers);
 
   const user = useSelector((state) =>
-    state.image.allUsers.find((i) => i.id === userId)
+    state.users.allUsers.find((u) => u.id === userId)
   );
 
   if (users.length === 0) {
     return <Loader />;
   }
-
-  const post = {};
 
   return (
     <div className="container">
@@ -60,11 +58,10 @@ export const UserComponent = () => {
             </td>
             <td className="extreme"></td>
           </tr>
-          <tr>
-            <PostCard post={post} key={post.id} />
-          </tr>
+          <tr></tr>
         </tbody>
       </table>
+      <PostListComponent />
 
       <button onClick={clickHandler}>На главную</button>
     </div>
