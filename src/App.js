@@ -7,6 +7,7 @@ import { PostPage } from "./pages/PostPage";
 import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";
+import { NotFound404 } from "./pages/NotFound404";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route element={<UserListPage />} path="/" />
             <Route element={<UserPage />} path="/userPage/:id" />
             <Route element={<PostPage />} path="users/:userId/posts/:postId" />
+            <Route element={<NotFound404 />} path="*" />
           </Routes>
         </div>
       </BrowserRouter>
