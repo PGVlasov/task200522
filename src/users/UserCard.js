@@ -9,7 +9,7 @@ export const UserCard = ({ user }) => {
   };
 
   return (
-    <div className="listItem" key={user.id}>
+    <div className="list-item" key={user.id}>
       <p className="userName"> {user.name}</p>
       <button className="button">
         <p className="button-text" onClick={handleGoToProfile}>

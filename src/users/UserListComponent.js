@@ -19,9 +19,9 @@ export const UserListComponent = () => {
   }
 
   return (
-    <div className="userList">
+    <div className="users-list">
       <h1>Список пользователей</h1>
-      <div className="usersContainer">
+      <div className="users-container">
         {users.map((user) => {
           return <UserCard user={user} key={user.id} />;
         })}
