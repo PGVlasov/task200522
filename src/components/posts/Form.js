@@ -1,11 +1,16 @@
-import "./Post.css";
-import axios from "axios";
 import { useState } from "react";
+import axios from "axios";
+import "./Post.css";
+import { useParams } from "react-router";
 
 export const Form = () => {
   const [commentInput, setCommentInput] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  const param = useParams();
+
+  const postId = parseInt(param.postId, 10);
 
   const changeNameHandler = (event) => {
     setName(event.target.value);
@@ -24,7 +29,7 @@ export const Form = () => {
     setEmail("");
 
     axios
-      .post("https://jsonplaceholder.typicode.com/posts/23/comments", {
+      .post(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`, {
         name: name,
         email: email,
         content: commentInput,
