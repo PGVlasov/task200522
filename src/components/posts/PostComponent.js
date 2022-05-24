@@ -17,12 +17,10 @@ export const PostComponent = () => {
 
   const commentButtonClick = () => {
     setCommentNeeded(true);
-    console.log("STATE", isCommentNeeded);
   };
 
   const commentButtonCancel = () => {
     setCommentNeeded(false);
-    console.log("STATE", isCommentNeeded);
   };
 
   const param = useParams();
@@ -30,20 +28,18 @@ export const PostComponent = () => {
   const userId = parseInt(param.userId, 10);
   const postId = parseInt(param.postId, 10);
 
-  // const postId = parseInt(param.id);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(loadPosts(userId));
-  }, [dispatch]);
+  }, [dispatch, userId]);
 
   const posts = useSelector((state) => state.posts.allPosts);
 
   const post = useSelector((state) =>
     state.posts.allPosts.find((p) => p.id === postId)
   );
-  console.log("!!!!!--->>", posts);
-  console.log("=====", post);
+
   if (posts.length === 0) {
     return <Loader />;
   }

@@ -5,7 +5,7 @@ export const Loader = () => {
     <Spinner
       animation="border"
       role="status"
-      style={{ width: "10rem", height: "10rem", marginTop: "2rem" }}
+      style={{ width: "10rem", height: "10rem", marginTop: "300px" }}
     >
       <span className="visually-hidden">Loading...</span>
     </Spinner>

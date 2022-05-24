@@ -1,10 +1,10 @@
-import "./User.css";
 import { useNavigate, useParams } from "react-router";
 import { Loader } from "../components/Loader";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadUsers } from "../store/actions/users";
 import { PostListComponent } from "../components/posts/PostListComponent";
+import "./User.css";
 
 export const UserComponent = () => {
   const navigate = useNavigate();
@@ -63,7 +63,7 @@ export const UserComponent = () => {
       </table>
       <PostListComponent />
       <button className="button" onClick={clickHandler}>
-        <p className="buttonp">На главную</p>
+        <p className="button-text">На главную</p>
       </button>
     </div>
   );
