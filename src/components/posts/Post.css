@@ -44,6 +44,21 @@
   border: 1px solid #0d1e4b;
 }
 
+.postButton-disabled {
+  width: 148px;
+  height: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 20px;
+  gap: 10px;
+  margin-top: 15px;
+  margin-left: 10px;
+  background: #7e3d3d;
+  border: 1px solid #0d1e4b;
+}
+
 .buttonp {
   width: 200px;
   height: 25px;
@@ -90,6 +105,15 @@
   border: 1px solid #dadada;
 }
 
+.form-control {
+  margin: 3px;
+}
+
 .input {
   margin: 3px;
+}
+
+.input-wrong {
+  margin: 3px;
+  border: 1px solid #ba1212;
 }
