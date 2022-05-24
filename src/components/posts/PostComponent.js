@@ -1,4 +1,3 @@
-import "./Post.css";
 import { useNavigate, useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
@@ -6,8 +5,9 @@ import { loadPosts } from "../../store/actions/posts";
 import { Loader } from "../Loader";
 import { CommentList } from "../comments/CommentList";
 import { Form } from "./Form";
+import "./Post.css";
 
-export const PostComponent = ({ userId }) => {
+export const PostComponent = () => {
   const [isCommentNeeded, setCommentNeeded] = useState(false);
   const navigate = useNavigate();
 
@@ -26,7 +26,11 @@ export const PostComponent = ({ userId }) => {
   };
 
   const param = useParams();
-  const postId = parseInt(param.id);
+
+  const userId = parseInt(param.userId, 10);
+  const postId = parseInt(param.postId, 10);
+
+  // const postId = parseInt(param.id);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,8 +42,8 @@ export const PostComponent = ({ userId }) => {
   const post = useSelector((state) =>
     state.posts.allPosts.find((p) => p.id === postId)
   );
-  console.log("!!!!!", posts);
-  console.log("!!!!!", post);
+  console.log("!!!!!--->>", posts);
+  console.log("=====", post);
   if (posts.length === 0) {
     return <Loader />;
   }

@@ -1,21 +1,21 @@
-import "./Post.css";
-import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { useDispatch, useSelector } from "react-redux";
 import { Loader } from "../Loader";
 import { loadPosts } from "../../store/actions/posts";
 import { PostCard } from "./PostCard";
 import { PostCardRolledUp } from "./postCardRolledUp";
-import { useParams } from "react-router";
+import "./Post.css";
 
 export const PostListComponent = () => {
-  const [arePostsExpended, setPostsExpend] = useState(false);
+  const [arePostsExpanded, setPostsExpand] = useState(false);
 
   const rollUp = () => {
-    setPostsExpend(false);
+    setPostsExpand(false);
   };
 
   const expand = () => {
-    setPostsExpend(true);
+    setPostsExpand(true);
   };
 
   const param = useParams();
@@ -25,7 +25,7 @@ export const PostListComponent = () => {
 
   useEffect(() => {
     dispatch(loadPosts(userId));
-  }, [dispatch]);
+  }, [dispatch, userId]);
 
   const posts = useSelector((state) => state.posts.allPosts);
 
@@ -33,9 +33,9 @@ export const PostListComponent = () => {
     return <Loader />;
   }
 
-  let previewPosts = posts.slice(0, 3);
+  if (!arePostsExpanded) {
+    let previewPosts = posts.slice(0, 3);
 
-  if (!arePostsExpended)
     return (
       <div className="userList">
         <h1>Список Постов</h1>
@@ -44,11 +44,12 @@ export const PostListComponent = () => {
             return <PostCardRolledUp post={post} key={post.id} />;
           })}
           <button className="postButton" onClick={expand}>
-            <p className="buttonp">Ращвернуть----&gt;</p>
+            <p className="buttonp">Развернуть----&gt;</p>
           </button>
         </div>
       </div>
     );
+  }
 
   return (
     <div className="userList">

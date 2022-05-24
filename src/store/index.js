@@ -1,8 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { CommentsReducer } from "./reducers/commentReducer";
-import { PostsReducer } from "./reducers/postReducer";
-import { UsersReducer } from "./reducers/userReducer";
+import { UsersReducer, PostsReducer, CommentsReducer } from "./reducers";
 
 const rootReducer = combineReducers({
   users: UsersReducer,

@@ -1,11 +1,11 @@
-import "./Post.css";
 import { useNavigate } from "react-router";
+import "./Post.css";
 
-export const PostCard = ({ post }) => {
+export const PostCard = ({ userId, post }) => {
   const navigate = useNavigate("");
 
   const clickHandler = () => {
-    navigate(`/post/${post.id}`);
+    navigate(`/users/${userId}/posts/${post.id}`);
   };
   return (
     <div className="postItem" key={post.id}>
