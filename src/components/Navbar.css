@@ -6,9 +6,10 @@
   top: 0px;
   background: #101010;
   display: inline-block;
+  align-items: center;
 }
 
-.navbarHeader {
+.navbar-header {
   position: absolute;
   width: 175px;
   height: 60px;
@@ -18,17 +19,14 @@
   font-family: "Alegreya Sans SC";
   font-style: normal;
   font-weight: 700;
-  font-size: 20px;
   line-height: 60px;
   /* identical to box height, or 214% */
-
   text-align: center;
   text-transform: uppercase;
-
-  color: #ffffff;
+  color: #faebce;
 }
 
-.navButtonMyProfile {
+.nav-button-my-profile {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -44,22 +42,23 @@
   text-decoration: none;
 }
 
-.link {
-}
-
-.navButtonSpecial {
+.nav-button-special {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
   gap: 10px;
-
   position: absolute;
   width: 257px;
   height: 40px;
   left: 581px;
   top: 15px;
-
   background: #ffffff;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
 }

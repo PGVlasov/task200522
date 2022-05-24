@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";
 import { NotFound404 } from "./pages/NotFound404";
+import { InDevelopment } from "./pages/InDevelopment";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route element={<UserPage />} path="/userPage/:id" />
             <Route element={<PostPage />} path="users/:userId/posts/:postId" />
             <Route element={<NotFound404 />} path="*" />
+            <Route element={<InDevelopment />} path="/notReady" />
           </Routes>
         </div>
       </BrowserRouter>
