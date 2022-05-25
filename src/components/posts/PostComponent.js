@@ -40,6 +40,10 @@ export const PostComponent = () => {
     state.posts.allPosts.find((p) => p.id === postId)
   );
 
+  if (!post) {
+    navigate("*");
+  }
+
   if (posts.length === 0) {
     return <Loader />;
   }

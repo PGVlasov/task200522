@@ -27,6 +27,10 @@ export const UserComponent = () => {
     state.users.allUsers.find((u) => u.id === userId)
   );
 
+  if (!user) {
+    navigate("*");
+  }
+
   if (users.length === 0) {
     return <Loader />;
   }
