@@ -1,4 +1,4 @@
-# The app was with Create React App using react-router react-router-dom
+# The app was created with Create React App using react-router react-router-dom
 
 # react-redux redux-thunk axios
 
