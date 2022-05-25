@@ -40,14 +40,14 @@ export const UserComponent = () => {
       <table className={classes["table"]}>
         <tbody>
           <tr>
-            <td className={classes["extreme"]}></td>
+            <td className={classes["corner"]}></td>
             <th colSpan="5">
               <span className={classes["username-table"]}>{user.username}</span>
             </th>
-            <td className={classes["extreme"]}></td>
+            <td className={classes["corner"]}></td>
           </tr>
           <tr>
-            <td className={classes["extreme"]}></td>
+            <td className={classes["corner"]}></td>
             <td className={classes["td"]}>
               <span className={classes["user-span"]}>{user.name}</span>
             </td>
@@ -64,7 +64,7 @@ export const UserComponent = () => {
               <span className={classes["user-span"]}>{user.company.name}</span>
               <span className={classes["user-span"]}> {user.company.bs}</span>
             </td>
-            <td className={classes["extreme"]}></td>
+            <td className={classes["corner"]}></td>
           </tr>
           <tr></tr>
         </tbody>
