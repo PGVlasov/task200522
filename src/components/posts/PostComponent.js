@@ -47,7 +47,7 @@ export const PostComponent = () => {
     return (
       <div className={classes["post-container"]}>
         <p className={classes["post-title"]}>{post.title}</p>
-        <span className={classes["post-body"]}>{post.body}</span>
+        <div className={classes["post-body"]}>{post.body}</div>
         <p>Comments:</p>
         <CommentList />
         <button
@@ -65,7 +65,7 @@ export const PostComponent = () => {
   return (
     <div className={classes["post-container"]}>
       <span className={classes["post-title"]}>{post.title}</span>
-      <span className={classes["post-body"]}>{post.body}</span>
+      <div className={classes["post-body"]}>{post.body}</div>
       <span>Comments:</span>
       <CommentList />
       <Form />
