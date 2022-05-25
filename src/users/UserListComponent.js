@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { loadUsers } from "../store/actions/users";
 import { Loader } from "../components/Loader";
 import { UserCard } from "./UserCard";
-import "./User.css";
+import classes from "./User.module.css";
 
 export const UserListComponent = () => {
   const dispatch = useDispatch();
@@ -19,9 +19,9 @@ export const UserListComponent = () => {
   }
 
   return (
-    <div className="users-list">
+    <div className={classes["users-list"]}>
       <h1>Список пользователей</h1>
-      <div className="users-container">
+      <div className={classes["users-container"]}>
         {users.map((user) => {
           return <UserCard user={user} key={user.id} />;
         })}

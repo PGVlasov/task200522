@@ -5,7 +5,7 @@ import { Loader } from "../Loader";
 import { loadPosts } from "../../store/actions/posts";
 import { PostCard } from "./PostCard";
 import { PostCardRolledUp } from "./postCardRolledUp";
-import "./Post.css";
+import classes from "./Post.module.css";
 
 export const PostListComponent = () => {
   const [arePostsExpanded, setPostsExpand] = useState(false);
@@ -37,14 +37,17 @@ export const PostListComponent = () => {
     let previewPosts = posts.slice(0, 3);
 
     return (
-      <div className="userList">
-        <h1>Список Постов</h1>
-        <div className="postContainer">
+      <div className={classes["post-wrapper"]}>
+        <h1>Посты</h1>
+        <div className={classes["all-posts-container"]}>
           {previewPosts.map((post) => {
             return <PostCardRolledUp post={post} key={post.id} />;
           })}
-          <button className="postButton" onClick={expand}>
-            <p className="buttonp">Развернуть----&gt;</p>
+          <button
+            className={classes["post-button-roll-up-extand"]}
+            onClick={expand}
+          >
+            <p className={classes["post-button-text"]}>Развернуть----&gt;</p>
           </button>
         </div>
       </div>
@@ -52,14 +55,17 @@ export const PostListComponent = () => {
   }
 
   return (
-    <div className="userList">
-      <h1>Список Постов</h1>
-      <div className="postContainer">
+    <div className={classes["post-wrapper"]}>
+      <h1>Посты</h1>
+      <div className={classes["all-posts-container"]}>
         {posts.map((post) => {
           return <PostCard post={post} key={post.id} userId={userId} />;
         })}
-        <button className="postButton" onClick={rollUp}>
-          <p className="buttonp">&lt;------ Свернуть</p>
+        <button
+          className={classes["post-button-roll-up-extand"]}
+          onClick={rollUp}
+        >
+          <p className={classes["post-button-text"]}>&lt;------ Свернуть</p>
         </button>
       </div>
     </div>

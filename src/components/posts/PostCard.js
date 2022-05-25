@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import "./Post.css";
+import classes from "./Post.module.css";
 
 export const PostCard = ({ userId, post }) => {
   const navigate = useNavigate("");
@@ -8,13 +8,15 @@ export const PostCard = ({ userId, post }) => {
     navigate(`/users/${userId}/posts/${post.id}`);
   };
   return (
-    <div className="postItem" key={post.id}>
-      <p className="postTitle"> {post.title}</p>
-      <p>{post.body.substr(0, 20)}.....</p>
-      <button className="postButton">
-        <p className="buttonp" onClick={clickHandler}>
+    <div className={classes["post-item"]} key={post.id}>
+      <p className={classes["post-title"]}> {post.title}</p>
+      <span className={classes["post-span"]}>
+        {post.body.substr(0, 20)}.....
+      </span>
+      <button className={classes["post-button"]}>
+        <span className={classes["post-button-text"]} onClick={clickHandler}>
           Смотреть пост
-        </p>
+        </span>
       </button>
     </div>
   );

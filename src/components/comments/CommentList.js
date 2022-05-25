@@ -4,6 +4,7 @@ import { loadComments } from "../../store/actions/comments";
 import { CommentCard } from "./CommentCard";
 import { Loader } from "../Loader";
 import { useParams } from "react-router";
+import classes from "./Comment.module.css";
 
 export const CommentList = () => {
   const param = useParams();
@@ -21,12 +22,10 @@ export const CommentList = () => {
     return <Loader />;
   }
   return (
-    <div className="commentList">
-      <div className="listContainer">
-        {comments.map((comment) => {
-          return <CommentCard comment={comment} key={comment.id} />;
-        })}
-      </div>
+    <div className={classes["comment-container"]}>
+      {comments.map((comment) => {
+        return <CommentCard comment={comment} key={comment.id} />;
+      })}
     </div>
   );
 };

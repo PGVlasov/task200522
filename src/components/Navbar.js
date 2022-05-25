@@ -1,4 +1,4 @@
-import "./Navbar.css";
+import classes from "./Navbar.module.css";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";
 
@@ -11,31 +11,26 @@ export const Navbar = () => {
 
   return (
     <nav>
-      <div className="navbar">
-        <div className="navbar-header">
-          <NavLink to="/" className="nav-link">
-            Post viewing
+      <div className={classes["navbar"]}>
+        <div className={classes["navbar-header"]}>
+          <NavLink to="/" className={classes["nav-link"]}>
+            POST VIEWING
           </NavLink>
         </div>
-
-        <ul>
-          <li>
-            <button
-              className="nav-button-special"
-              onClick={() => clickHandler()}
-            >
-              Версия для слабовидящих
-            </button>
-          </li>
-          <li>
-            <button
-              className="nav-button-my-profile"
-              onClick={() => clickHandler()}
-            >
-              Мой профиль
-            </button>
-          </li>
-        </ul>
+        <div className={classes["button-wrap"]}>
+          <button
+            className={classes["nav-button-special"]}
+            onClick={() => clickHandler()}
+          >
+            Версия для слабовидящих
+          </button>
+          <button
+            className={classes["nav-button-my-profile"]}
+            onClick={() => clickHandler()}
+          >
+            Мой профиль
+          </button>
+        </div>
       </div>
     </nav>
   );

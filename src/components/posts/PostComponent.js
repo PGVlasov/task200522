@@ -5,7 +5,7 @@ import { loadPosts } from "../../store/actions/posts";
 import { Loader } from "../Loader";
 import { CommentList } from "../comments/CommentList";
 import { Form } from "./Form";
-import "./Post.css";
+import classes from "./Post.module.css";
 
 export const PostComponent = () => {
   const [isCommentNeeded, setCommentNeeded] = useState(false);
@@ -45,31 +45,39 @@ export const PostComponent = () => {
   }
   if (!isCommentNeeded)
     return (
-      <div className="container">
-        <p>{post.title}</p>
-        <p>{post.body}</p>
+      <div className={classes["post-container"]}>
+        <p className={classes["post-title"]}>{post.title}</p>
+        <span className={classes["post-body"]}>{post.body}</span>
         <p>Comments:</p>
         <CommentList />
-        <button className="button" onClick={clickHandler}>
-          <p className="buttonp">На главную</p>
+        <button
+          className={classes["post-button"]}
+          onClick={() => commentButtonClick()}
+        >
+          <p className={classes["post-button-text"]}>Прокомментировать</p>
         </button>
-        <button className="button" onClick={() => commentButtonClick()}>
-          <p className="buttonp">Прокомментировать</p>
+        <hr />
+        <button className={classes["post-button"]} onClick={clickHandler}>
+          <span className={classes["post-button-text"]}>На главную</span>
         </button>
       </div>
     );
   return (
-    <div className="container">
-      <p>{post.title}</p>
-      <p>{post.body}</p>
-      <p>Comments:</p>
+    <div className={classes["post-container"]}>
+      <span className={classes["post-title"]}>{post.title}</span>
+      <span className={classes["post-body"]}>{post.body}</span>
+      <span>Comments:</span>
       <CommentList />
-      <button className="button" onClick={clickHandler}>
-        <p className="buttonp">На главную</p>
-      </button>
       <Form />
-      <button className="button" onClick={() => commentButtonCancel()}>
-        <p className="buttonp">Отменить</p>
+      <button
+        className={classes["post-button"]}
+        onClick={() => commentButtonCancel()}
+      >
+        <span className={classes["post-button-text"]}>Отменить</span>
+      </button>
+      <hr />
+      <button className={classes["post-button"]} onClick={clickHandler}>
+        <span className={classes["post-button-text"]}>На главную</span>
       </button>
     </div>
   );

@@ -1,10 +1,10 @@
-import "./Post.css";
+import classes from "./Post.module.css";
 
 export const PostCardRolledUp = ({ post }) => {
   return (
-    <div className="postItem" key={post.id}>
-      <p className="postTitle"> {post.title}</p>
-      <p>{post.body.substr(0, 20)}.....</p>
+    <div className={classes["post-item"]} key={post.id}>
+      <p className={classes["post-title"]}> {post.title}</p>
+      <span>{post.body.substr(0, 20)}.....</span>
     </div>
   );
 };

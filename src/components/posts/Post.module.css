@@ -1,15 +1,40 @@
-.postItem {
+.post-wrapper {
+  border: 1px solid #000000;
+  padding-left: 60px;
+  padding-bottom: 33px;
+  width: 1116px;
+}
+
+.all-posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  left: 47px;
+  top: 596px;
+  margin: auto;
+}
+
+.post-container {
+  margin-top: 46px;
+  padding-top: 36px;
+  padding-left: 60px;
+  width: 1116px;
+  height: 100%;
+  margin-bottom: 100px;
+  border: 1px solid #000000;
+}
+
+.post-item {
   box-sizing: border-box;
-  padding-left: 17px;
   padding-top: 14px;
   width: 239px;
   height: 183px;
   margin-top: 15px;
-  margin-left: 13px;
+  margin-right: 13px;
   border: 1px solid #dadada;
+  padding: 15px 15px 15px 15px;
 }
 
-.postTitle {
+.post-title {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
@@ -20,16 +45,22 @@
   margin-bottom: 4px;
 }
 
-.postContainer {
-  display: flex;
-  flex-wrap: wrap;
-  left: 47px;
-  top: 596px;
-  border: 1px solid #dadada;
-  margin: auto;
+.post-span {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 23px;
+  color: #000000;
+  margin-top: 3px;
+  margin-bottom: 4px;
 }
 
-.postButton {
+.post-body {
+  padding-right: 100px;
+}
+
+.post-button {
   width: 148px;
   height: 30px;
   box-sizing: border-box;
@@ -44,7 +75,22 @@
   border: 1px solid #0d1e4b;
 }
 
-.postButton-disabled {
+.post-button-roll-up-extand {
+  width: 148px;
+  height: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px 20px;
+  gap: 10px;
+  margin-top: 50px;
+  margin-left: 40px;
+  background: #101010;
+  border: 1px solid #0d1e4b;
+}
+
+.post-button-disabled {
   width: 148px;
   height: 30px;
   box-sizing: border-box;
@@ -59,7 +105,7 @@
   border: 1px solid #0d1e4b;
 }
 
-.buttonp {
+.post-button-text {
   width: 200px;
   height: 25px;
 
@@ -75,22 +121,15 @@
   order: 0;
   flex-grow: 0;
 }
-.container {
-  margin-top: 117px;
-  padding-top: 36px;
-  width: 100%;
-  height: 100%;
-  margin-bottom: 100px;
-}
 
-.formContainer {
+.form-container {
   margin-top: 30px;
 }
 
 .form {
   display: flex;
 }
-.inputContainer {
+.input-container {
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -103,6 +142,11 @@
   left: 497px;
   top: 786px;
   border: 1px solid #dadada;
+}
+
+.validate {
+  font-size: 10px;
+  color: #ba1212;
 }
 
 .form-control {

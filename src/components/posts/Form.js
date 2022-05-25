@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-import "./Post.css";
 import { useNavigate, useParams } from "react-router";
+import classes from "./Post.module.css";
 
 export const Form = () => {
   const [commentInput, setCommentInput] = useState("");
@@ -38,6 +38,7 @@ export const Form = () => {
     setCommentInput("");
     setName("");
     setEmail("");
+    setValidate(false);
 
     axios
       .post(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`, {
@@ -55,11 +56,11 @@ export const Form = () => {
   };
 
   return (
-    <div className="formContainer">
-      <form className="form">
-        <div className="inputContainer">
+    <div className={classes["form-container"]}>
+      <form className={classes["form"]}>
+        <div className={classes["input-container"]}>
           <input
-            className={"input"}
+            className={classes["input"]}
             type="text"
             id="title"
             placeholder="Вашe Имя"
@@ -68,16 +69,24 @@ export const Form = () => {
           />
           <input
             type="email"
-            className={validate ? "input" : "input-wrong"}
+            className={validate ? classes["input"] : classes["input-wrong"]}
             id="title"
             placeholder="Ваш Еmail"
             value={email}
             onChange={changeEmailHandler}
           />
-          <label>{!validate ? <p>введите корректный email</p> : <p></p>}</label>
+          <label>
+            {!validate ? (
+              <span className={classes["validate"]}>
+                введите корректный email
+              </span>
+            ) : (
+              <p></p>
+            )}
+          </label>
         </div>
         <textarea
-          className="textarea"
+          className={classes["textarea"]}
           type="text"
           id="title"
           placeholder="Ваш комметарий....."
@@ -87,13 +96,13 @@ export const Form = () => {
         <button
           className={
             !commentInput || !name || !email || !validate
-              ? "postButton-disabled"
-              : "postButton"
+              ? classes["post-button-disabled"]
+              : classes["post-button"]
           }
           onClick={(event) => addComment(event)}
           disabled={!commentInput || !name || !email || !validate}
         >
-          <p className="buttonp">Отправить</p>
+          <span className={classes["post-button-text"]}>Отправить</span>
         </button>
       </form>
     </div>

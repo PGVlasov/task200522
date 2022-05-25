@@ -6,7 +6,7 @@ import { UserPage } from "./pages/UserPage";
 import { PostPage } from "./pages/PostPage";
 import { Provider } from "react-redux";
 import store from "./store";
-import "./App.css";
+import classes from "./App.module.css";
 import { NotFound404 } from "./pages/NotFound404";
 import { InDevelopment } from "./pages/InDevelopment";
 
@@ -14,8 +14,10 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className="app">
+        <div className={classes["app"]}>
           <Navbar />
+        </div>
+        <div className={classes["app"]}>
           <Routes>
             <Route element={<UserListPage />} path="/" />
             <Route element={<UserPage />} path="/userPage/:id" />

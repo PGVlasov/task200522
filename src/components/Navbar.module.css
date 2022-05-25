@@ -1,29 +1,31 @@
 .navbar {
-  position: absolute;
-  width: 100%;
+  width: 1116px;
   height: 70px;
   left: 0px;
   top: 0px;
   background: #101010;
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 
 .navbar-header {
-  position: absolute;
   width: 175px;
   height: 60px;
-  left: 61px;
+  margin-left: 61px;
   top: 10px;
-
   font-family: "Alegreya Sans SC";
   font-style: normal;
   font-weight: 700;
   line-height: 60px;
-  /* identical to box height, or 214% */
-  text-align: center;
   text-transform: uppercase;
   color: #faebce;
+}
+
+.button-wrap {
+  display: flex;
+  flex-direction: row;
 }
 
 .nav-button-my-profile {
@@ -32,8 +34,8 @@
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
+  margin-right: 61px;
   gap: 10px;
-  position: absolute;
   width: 205px;
   height: 40px;
   left: 850px;
@@ -48,8 +50,8 @@
   justify-content: center;
   align-items: center;
   padding: 10px 20px;
+  margin-right: 12px;
   gap: 10px;
-  position: absolute;
   width: 257px;
   height: 40px;
   left: 581px;
@@ -58,6 +60,12 @@
 }
 
 .nav-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.nav-link:hover {
   text-decoration: none;
   color: #ffffff;
   font-size: 18px;

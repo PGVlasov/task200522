@@ -1,8 +1,8 @@
-import "../App.css";
+import classes from "../App.module.css";
 
 export const InDevelopment = () => {
   return (
-    <div className="in-development">
+    <div className={classes["in-development"]}>
       <h1>Страница в разработке</h1>
     </div>
   );
